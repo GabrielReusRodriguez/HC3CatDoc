@@ -28,8 +28,8 @@ function handleFileSelect(event) {
 
     const reader = new FileReader();
     reader.onload = function(e) {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
+        const fileData = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(fileData, { type: 'array' });
         const sheetName = 'Catàleg definitiu';
         const worksheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
