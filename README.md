@@ -30,3 +30,4 @@ Esta aplicación permite visualizar el catálogo de documentos HC3 de Catsalut, 
 
 ## Dependencias Externas
 Sin restricciones.
+
