@@ -1,4 +1,4 @@
-let data = [];
+data = [];
 let filteredData = [];
 let currentPage = 1;
 let rowsPerPage = 10;
@@ -40,9 +40,9 @@ function handleFileSelect(event) {
 
         data = rows.map(row => {
             return {
-                codigo: row[headers.indexOf('Codi tipus document')],
-                nombre_doc: row[headers.indexOf('Nom tipus document')],
-                agrupador: row[headers.indexOf('Agrupador')]
+                codigo: row[headers.indexOf('Codi tipus document')] || '',
+                nombre_doc: row[headers.indexOf('Nom tipus document')] || '',
+                agrupador: row[headers.indexOf('Agrupador')] || ''
             };
         });
 
