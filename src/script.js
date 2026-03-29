@@ -38,14 +38,18 @@ function handleFileSelect(event) {
         const headers = jsonData[3];
         const rows = jsonData.slice(4);
 
+        console.log('Headers:', headers);
+        console.log('First row:', rows[0]);
+
         data = rows.map(row => {
             return {
-                codigo: row[headers.indexOf('Codi tipus document')] || '',
-                nombre_doc: row[headers.indexOf('Nom tipus document')] || '',
-                agrupador: row[headers.indexOf('Agrupador')] || ''
+                codigo: String(row[headers.indexOf('Codi tipus document')] || ''),
+                nombre_doc: String(row[headers.indexOf('Nom tipus document')] || ''),
+                agrupador: String(row[headers.indexOf('Agrupador')] || '')
             };
         });
 
+        console.log('Processed data:', data);
         filteredData = data;
         currentPage = 1;
         renderTable();
@@ -55,11 +59,14 @@ function handleFileSelect(event) {
 
 function filterData() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    console.log('Search term:', searchTerm);
+    console.log('Data:', data);
     filteredData = data.filter(item => {
         return item.codigo.toLowerCase().includes(searchTerm) ||
                item.nombre_doc.toLowerCase().includes(searchTerm) ||
                item.agrupador.toLowerCase().includes(searchTerm);
     });
+    console.log('Filtered data:', filteredData);
     currentPage = 1;
     renderTable();
 }
