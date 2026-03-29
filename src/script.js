@@ -35,8 +35,8 @@ function handleFileSelect(event) {
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
         // Procesar los datos
-        const headers = jsonData[0];
-        const rows = jsonData.slice(1);
+        const headers = jsonData[3];
+        const rows = jsonData.slice(4);
 
         data = rows.map(row => {
             return {
