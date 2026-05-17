@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Build
+build/
+dist/
+
+# Docker
+*.log
+
+# Data lock files
+data/.~lock.*
+
+# Mac
+.DS_Store
