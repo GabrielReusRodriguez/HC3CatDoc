@@ -17,6 +17,12 @@ Aplicació per visualitzar i cercar el catàleg de documents HC3 de Catsalut.
 2. Inicieu el contenidor: `docker-compose up`
 3. Obriu `http://localhost:8080` al navegador
 
+### Opció 3: Desplegar a GitHub Pages
+1. Feu push a la branca `main` o executeu manualment el workflow `Deploy to GitHub Pages`
+2. A GitHub, assegureu-vos que Pages està configurat per desplegar des de **GitHub Actions**
+3. La web es publicarà amb el contingut de `src/` i el catàleg de `data/`
+4. Un cop finalitzat el workflow, obriu la URL pública de GitHub Pages del repositori
+
 ## Funcionalitats
 - Visualització de les dades en format taula
 - Cerca per text lliure
