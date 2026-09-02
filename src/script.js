@@ -7,7 +7,7 @@ let sortDirection = 1;
 
 // Event listeners
 document.getElementById('fileInput').addEventListener('change', handleFileSelect);
-document.getElementById('searchInput').addEventListener('input', filterData);
+document.getElementById('search-input').addEventListener('input', filterData);
 document.getElementById('rowsPerPage').addEventListener('change', function() {
     rowsPerPage = parseInt(this.value);
     currentPage = 1;
@@ -67,7 +67,7 @@ function processCSVContent(content) {
 }
 
 function filterData() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
     console.log('Search term:', searchTerm);
     console.log('Data:', data);
     filteredData = data.filter(item => {
@@ -81,7 +81,7 @@ function filterData() {
 }
 
 function clearFilters() {
-    document.getElementById('searchInput').value = '';
+    document.getElementById('search-input').value = '';
     filteredData = data;
     currentPage = 1;
     renderTable();
